@@ -1,0 +1,8 @@
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\bin\Debug\ADO.NET-CRUDConsoleApp.exe.config
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\bin\Debug\ADO.NET-CRUDConsoleApp.exe
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\bin\Debug\ADO.NET-CRUDConsoleApp.pdb
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\obj\Debug\ADO.NET-CRUDConsoleApp.csproj.AssemblyReference.cache
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\obj\Debug\ADO.NET-CRUDConsoleApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\obj\Debug\ADO.NET-CRUDConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\obj\Debug\ADO.NET-CRUDConsoleApp.exe
+C:\Users\lucas\Workspace\C Sharp\ADO.NET-CRUDConsoleApp\ADO.NET-CRUDConsoleApp\obj\Debug\ADO.NET-CRUDConsoleApp.pdb
