@@ -39,9 +39,7 @@ namespace ADO.NET_CRUDConsoleApp
 
             int nroReg = cmd.ExecuteNonQuery();
 
-            Console.WriteLine(
-                "{0} Registro(s) Inserido(s)",
-                  nroReg.ToString());
+            Console.WriteLine("{0} Registro(s) Inserido(s)", nroReg.ToString());
         }
 
         public void Delete(SqlConnection Conn, int ID)

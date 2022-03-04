@@ -17,16 +17,16 @@ namespace ADO.NET_CRUDConsoleApp
                 switch (opc)
                 {
                     case "1":
-                        query.View(conn.GetConn());
+                        CallView();
                         break;
                     case "2":
-                        //CallAdd();
+                        CallAdd();
                         break;
                     case "3":
-                        //CallEdit();
+                        CallEdit();
                         break;
                     case "4":
-                        //CallDelete();
+                        CallDelete();
                         break;
                     default:
                         throw new ArgumentException("\tDigite um valor válido!!!");
@@ -51,9 +51,60 @@ namespace ADO.NET_CRUDConsoleApp
             string Option = Console.ReadLine().ToUpper();
             return Option;
         }
+
+        public void CallView()
+        {
+            Console.Clear();
+            query.View(conn.GetConn());
+        }
         public void CallAdd()
         {
+            Console.Clear();
+            Console.Write("Digite o nome do produto: ");
+            string name = Console.ReadLine();
+            Console.WriteLine();
+            
+            Console.Write("Digite o valor do produto: ");
+            decimal price = Convert.ToDecimal(Console.ReadLine());
 
+            query.Add(conn.GetConn(), name, price);
+        }
+
+        public void CallEdit()
+        {
+            Console.Clear();
+            Console.Write("Digite o ID do produto: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+
+            Console.Write("Digite o nome nome do produto: ");
+            string name = Console.ReadLine();
+            Console.WriteLine();
+
+            Console.Write("Digite o novo valor do produto: ");
+            decimal price = Convert.ToDecimal(Console.ReadLine());
+
+            query.Edit(conn.GetConn(), name, price, id);
+        }
+
+        public void CallDelete()
+        {
+            Console.Clear();
+            Console.Write("Digite o ID do produto: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Clear();
+            Console.Write("TEM CERTEZA QUE DESEJA EXCLUIR ESTE ITEM? (S/N): ");
+            string confirm = Console.ReadLine().ToUpper();
+
+            if(confirm == "S")
+            {
+                query.Delete(conn.GetConn(), id);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

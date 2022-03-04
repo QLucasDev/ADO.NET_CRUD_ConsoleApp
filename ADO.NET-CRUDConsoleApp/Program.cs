@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -8,22 +8,34 @@ namespace ADO.NET_CRUDConsoleApp
     {
         static void Main(string[] args)
         {
+            //As linhas comentadas são usadas apenas para testes
+
+            //String de Conexão
             //string cs = @"Data Source=LAPTOP-QF5TI23D\SQLEXPRESS;"
             //            + "Initial Catalog=PRODUTOS;"
             //            + "Integrated Security=True";
 
+            //Instancia da SqlConnection
             //SqlConnection conn = new SqlConnection(cs);
 
-            Connection connection = new Connection();
+            //Instancia da Query
             Query query = new Query();
+
+            View view = new View();
+            Connection connection = new Connection();
 
             try
             {
-                connection.GetConn().Open();
+                //Por motivos de bug, a conexão é aberta dentro do método..
+                connection.GetConn();
+
+                //Instancia dos métodos...
                 //query.View(connection.GetConn());
-                //query.Add(connection.GetConn(), "Nave Epacial", 20.55M);
+                //query.Add(connection.GetConn(), "Cachorro de pelucia", 20.55M);
                 //query.Delete(connection.GetConn(), 17);
                 //query.Edit(connection.GetConn(), "MotoRC", 22.99M, 10);
+
+                view.ReturnOptions();
             }
             catch (Exception ex)
             {
