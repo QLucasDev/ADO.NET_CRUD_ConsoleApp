@@ -9,13 +9,6 @@ namespace ADO.NET_CRUDConsoleApp
         {
             //As linhas comentadas são usadas apenas para testes
 
-            //String de Conexão
-            //string cs = @"Data Source=LAPTOP-QF5TI23D\SQLEXPRESS;"
-            //            + "Initial Catalog=PRODUTOS;"
-            //            + "Integrated Security=True";
-
-            //Instancia da SqlConnection
-            //SqlConnection conn = new SqlConnection(cs);
 
             //Instancia da Query
             Query query = new Query();

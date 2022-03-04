@@ -111,7 +111,6 @@ namespace ADO.NET_CRUDConsoleApp
         {
             string price = Console.ReadLine().Replace(".","");
             price.Replace(',', '.');
-            Console.WriteLine(price);
             decimal fPrice = decimal.Parse(price);
             return fPrice;
         }
