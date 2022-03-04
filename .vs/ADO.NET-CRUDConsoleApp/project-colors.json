@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "edf637c7-680a-43fb-8a16-5b27b454929a": {
+      "ProjectGuid": "edf637c7-680a-43fb-8a16-5b27b454929a",
+      "DisplayName": "ADO.NET-CRUDConsoleApp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
