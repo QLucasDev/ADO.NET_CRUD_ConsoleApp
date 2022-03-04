@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace ADO.NET_CRUDConsoleApp
 {
@@ -7,7 +6,7 @@ namespace ADO.NET_CRUDConsoleApp
     {
         Query query = new Query();
         Connection conn = new Connection();
-        StringBuilder sb = new StringBuilder();
+        
 
         public void ReturnOptions()
         {
@@ -36,7 +35,7 @@ namespace ADO.NET_CRUDConsoleApp
                 opc = Options();
             }
         }
-        public string Options()
+        private string Options()
         {
             Console.WriteLine();
             Console.WriteLine("Informe a opção desejada: ");
@@ -52,25 +51,25 @@ namespace ADO.NET_CRUDConsoleApp
             return Option;
         }
 
-        public void CallView()
+        private void CallView()
         {
             Console.Clear();
             query.View(conn.GetConn());
         }
-        public void CallAdd()
+        private void CallAdd()
         {
             Console.Clear();
             Console.Write("Digite o nome do produto: ");
             string name = Console.ReadLine();
             Console.WriteLine();
-            
+
             Console.Write("Digite o valor do produto: ");
             decimal price = PriceConverter();
 
             query.Add(conn.GetConn(), name, price);
         }
 
-        public void CallEdit()
+        private void CallEdit()
         {
             Console.Clear();
             Console.Write("Digite o ID do produto: ");
@@ -86,7 +85,7 @@ namespace ADO.NET_CRUDConsoleApp
             query.Edit(conn.GetConn(), name, price, id);
         }
 
-        public void CallDelete()
+        private void CallDelete()
         {
             Console.Clear();
             Console.Write("Digite o ID do produto: ");
@@ -96,7 +95,7 @@ namespace ADO.NET_CRUDConsoleApp
             Console.Write("TEM CERTEZA QUE DESEJA EXCLUIR ESTE ITEM? (S/N): ");
             string confirm = Console.ReadLine().ToUpper();
 
-            if(confirm == "S")
+            if (confirm == "S")
             {
                 query.Delete(conn.GetConn(), id);
             }
@@ -107,9 +106,9 @@ namespace ADO.NET_CRUDConsoleApp
         }
 
         //Corrige o Bug do serparador decimal
-        public decimal PriceConverter()
+        private decimal PriceConverter()
         {
-            string price = Console.ReadLine().Replace(".","");
+            string price = Console.ReadLine().Replace(".", "");
             price.Replace(',', '.');
             decimal fPrice = decimal.Parse(price);
             return fPrice;
