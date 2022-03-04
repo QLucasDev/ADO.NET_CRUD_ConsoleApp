@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Text;
 
 namespace ADO.NET_CRUDConsoleApp
 {
@@ -7,6 +7,7 @@ namespace ADO.NET_CRUDConsoleApp
     {
         Query query = new Query();
         Connection conn = new Connection();
+        StringBuilder sb = new StringBuilder();
 
         public void ReturnOptions()
         {
@@ -32,7 +33,6 @@ namespace ADO.NET_CRUDConsoleApp
                         throw new ArgumentException("\tDigite um valor válido!!!");
                 }
 
-
                 opc = Options();
             }
         }
@@ -42,7 +42,7 @@ namespace ADO.NET_CRUDConsoleApp
             Console.WriteLine("Informe a opção desejada: ");
 
             Console.WriteLine("1 - Listar Produtos");
-            Console.WriteLine("2 - Adicionar Produuto");
+            Console.WriteLine("2 - Adicionar Produto");
             Console.WriteLine("3 - Editar Produto");
             Console.WriteLine("4 - Deletar Produto");
             Console.WriteLine("X - Sair");
@@ -65,7 +65,7 @@ namespace ADO.NET_CRUDConsoleApp
             Console.WriteLine();
             
             Console.Write("Digite o valor do produto: ");
-            decimal price = Convert.ToDecimal(Console.ReadLine());
+            decimal price = PriceConverter();
 
             query.Add(conn.GetConn(), name, price);
         }
@@ -77,13 +77,12 @@ namespace ADO.NET_CRUDConsoleApp
             int id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
 
-            Console.Write("Digite o nome nome do produto: ");
+            Console.Write("Digite o novo nome do produto: ");
             string name = Console.ReadLine();
             Console.WriteLine();
 
             Console.Write("Digite o novo valor do produto: ");
-            decimal price = Convert.ToDecimal(Console.ReadLine());
-
+            decimal price = PriceConverter();
             query.Edit(conn.GetConn(), name, price, id);
         }
 
@@ -105,6 +104,16 @@ namespace ADO.NET_CRUDConsoleApp
             {
                 return;
             }
+        }
+
+        //Corrige o Bug do serparador decimal
+        public decimal PriceConverter()
+        {
+            string price = Console.ReadLine().Replace(".","");
+            price.Replace(',', '.');
+            Console.WriteLine(price);
+            decimal fPrice = decimal.Parse(price);
+            return fPrice;
         }
     }
 }
